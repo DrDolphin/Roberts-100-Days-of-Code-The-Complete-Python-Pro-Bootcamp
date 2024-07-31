@@ -1,0 +1,22 @@
+# Byte-compiled files
+__pycache__/
+*.pyc
+
+# Distribution / packaging
+.Python
+env/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Hidden files
+.git/
+*.swp
+
+# Local configuration files
+*.env
+
+# VS Code files
+.vscode/
+*.code-workspace
