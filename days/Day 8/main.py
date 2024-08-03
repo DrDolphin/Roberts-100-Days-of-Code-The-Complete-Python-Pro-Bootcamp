@@ -1,27 +1,22 @@
 from art import logo
 
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+letter_to_number = {letter: number for number, letter in enumerate(alphabet)}
 
 def caesar(start_text, shift_amount, cipher_direction):
     alphabet_length = len(alphabet)
-    if shift_amount < alphabet_length:
-        end_text = ""
-        for letter in start_text:
-            if letter in alphabet:
-                if cipher_direction == "encode":
-                    new_letter_index = alphabet.index(letter) + shift_amount
-                    if new_letter_index > alphabet_length:
-                        new_letter_index = new_letter_index - (alphabet_length - 1)
-                else:
-                    new_letter_index = alphabet.index(letter) - shift_amount
-                    if new_letter_index < 0:
-                        new_letter_index = new_letter_index - 1
-                end_text += alphabet[new_letter_index]
+    shift_amount = shift_amount % len(alphabet)
+    end_text = ""
+    for letter in start_text:
+        if letter in alphabet:
+            if cipher_direction == "encode":
+                new_letter_index = (letter_to_number[letter] + shift_amount) % alphabet_length
             else:
-                end_text += letter
-        print(f"The {cipher_direction}d text is {end_text}")
-    else:
-        print(f"Your shift must be less than {alphabet_length}")
+                new_letter_index = (letter_to_number[letter] - shift_amount) % alphabet_length
+            end_text += alphabet[new_letter_index]
+        else:
+            end_text += letter
+    print(f"The {cipher_direction}d text is {end_text}")
         
 print(logo)
 
