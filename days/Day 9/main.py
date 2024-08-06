@@ -11,8 +11,10 @@ def find_highest_bid(bids_list):
     for bid in bids_list:
         if bid["bid"] > highest_bidder["bid"]:
             highest_bidder = bid
-            
-    print(f"The highest bidder was {highest_bidder['bidder']} with a bid of ${highest_bidder['bid']:.2f}.")
+
+    print(
+        f"The highest bidder was {highest_bidder['bidder']} with a bid of ${highest_bidder['bid']:.2f}."
+    )
 
 
 bids: list[dict[str, str | float]] = []
@@ -25,10 +27,10 @@ while add_another_bidder:
     new_bid["bid"] = float(input("Please enter your bid: "))
     bids.append(new_bid)
     more_bidders = input("Are there anymore bidders? (Yes or No): ").lower()
-    
+
     if more_bidders == "no":
         add_another_bidder = False
-        
+
     if platform.system() == "Windows":
         os.system("cls")
     else:
