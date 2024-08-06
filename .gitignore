@@ -16,6 +16,7 @@ build/
 
 # Local configuration files
 *.env
+*.idea
 
 # VS Code files
 .vscode/
