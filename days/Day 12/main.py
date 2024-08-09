@@ -56,7 +56,7 @@ def guessing_game() -> None:
 
     if guessed_correctly:
         print(
-            f"Congratulations! You win! The number was {random_number} and you guessed it with {guesses_left} guesse(s) left!"
+            f"Congratulations! You win! The number was {random_number} and you guessed it with {guesses_left} guess(es) left!"
         )
     else:
         print(f"You ran out of guesses! The number was {random_number}!")
