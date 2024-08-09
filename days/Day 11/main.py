@@ -13,9 +13,13 @@ def initialize():
     display_logo()
 
     starter_hands = {
-        "player_hand": random.sample(deck, 2),
-        "dealer_hand": random.sample(deck, 2),
+        "player_hand": [],
+        "dealer_hand": [],
     }
+
+    for _ in range(2):
+        give_new_card(starter_hands["player_hand"])
+        give_new_card(starter_hands["dealer_hand"])
 
     return starter_hands
 
